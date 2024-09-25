@@ -4,7 +4,7 @@ import Sidebar from "./components/sidebar/Sidebar";
 import GlobalStyleProvider from "./providers/GlobalStyleProvider";
 import ContextProvider from "./providers/ContextProvider";
 import { ClerkProvider } from "@clerk/nextjs";
-import { auth, currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import { Nunito } from "next/font/google";
 
 const nunito = Nunito({

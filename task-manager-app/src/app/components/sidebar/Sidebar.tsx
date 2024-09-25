@@ -31,9 +31,11 @@ function Sidebar() {
     <SidebarStyled theme={theme}>
       <div className="sidebar-profile">
         <div className="profile-overlay"></div>
-        <div className="image">
-          <Image src={`${imageUrl}`} alt="avatar" width={70} height={70} />
-        </div>
+        {imageUrl && (
+          <div className="image">
+            <Image src={`${imageUrl}`} alt="avatar" width={70} height={70} />
+          </div>
+        )}
         <h3>{firstName}</h3>
       </div>
       <ul className="nav-items">

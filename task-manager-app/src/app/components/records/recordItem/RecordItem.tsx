@@ -57,9 +57,12 @@ export default function RecordItem({ record }: Props) {
           content={<UpdateRecord record={record} closeModal={closeModal} />}
         />
       )}
-      <h3>{title}</h3>
-      <p className="main-content">{description}</p>
-      <div className="secondary-content">
+      <div className="record-header">
+        <h3>{title}</h3>
+        <p className="date">{formatDate(date)}</p>
+      </div>
+      <p className="record-main-content">{description}</p>
+      <div className="record-secondary-content">
         <div className="tags">
           {tagIsLoaded &&
             recordTags.map((recordTag) => (
@@ -68,7 +71,6 @@ export default function RecordItem({ record }: Props) {
               </span>
             ))}
         </div>
-        <p className="date">{formatDate(date)}</p>
       </div>
       <div className="footer">
         <button
@@ -100,11 +102,17 @@ const RecordItemStyled = styled.div`
   flex-direction: column;
   gap: 0.5rem;
 
-  .main-content {
+  .record-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .record-main-content {
     flex: 1;
   }
 
-  .secondary-content {
+  .record-secondary-content {
     display: flex;
     flex-direction: row;
     padding: 0.5rem 0;
